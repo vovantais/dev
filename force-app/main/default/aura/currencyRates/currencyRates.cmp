@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="currencyRates" access="global">
+
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+	<aura:attribute name="result" type="List" />
+
+	<div class="wrapper">
+		<h3 class="title">Exchange rates of the national bank of the Republic of Belarus</h3>
+			<lightning:select aura:id="list" name="selectItem" label="" class="select">
+				<option value="">Select currency</option>
+				<aura:iteration items="{!v.result}" var="item">
+					<option value="{!(item.Cur_Name)+': '+ (item.Cur_OfficialRate)}">{!item.Cur_Name}</option>
+				</aura:iteration>
+			</lightning:select>
+		<lightning:button name="selectChange" label="Submit" onclick="{!c.changeSelect}" class="btn" />
+		<lightning:formattedText aura:id="cursInfo" value="" class='curs' />
+	</div>
+	
+</aura:component>

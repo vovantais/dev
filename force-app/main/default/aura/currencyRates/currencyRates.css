@@ -1,0 +1,61 @@
+.THIS.wrapper{
+   display:flex;
+   margin:10px 0px 0px 0px;
+   position:relative;
+   background:#fff;
+   height: 150px;
+}
+
+.THIS .title{
+   position:absolute;
+   font-size: 16.5px;
+   left:10px;
+   top:20px;
+   text-transform: uppercase;
+   color: #445162;
+   font-weight: bold;
+}
+
+.THIS .select{
+	width: 250px;
+	height: 30px;
+	padding:5px 10px;
+	text-transform: uppercase;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	letter-spacing: 0.8px;
+	outline: none;
+   margin:40px 0px 0px 20px;
+}
+
+.THIS .btn {
+	width:100px;
+	padding: 5px 10px;
+	height: 30px;
+	border: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.8px;
+	background: #445162;
+	border-radius:10px;
+	cursor: pointer;
+   margin: 70px 0px 0px 10px;
+   outline: none;
+   transition: all .4s linear .1s;
+}
+
+.THIS .btn:hover{
+   background: #6c86a8; 
+}
+
+.THIS .curs{
+	font-size: 20px;
+	margin: 20px 10px;
+	letter-spacing: 1px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+   position:absolute;
+   left:20px;
+   top:90px;
+}

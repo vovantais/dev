@@ -1,0 +1,77 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="FindDuplicateCase" access="global">
+
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+	<aura:attribute name="duplicateCaseList" type="List" />
+	<aura:attribute name="content" type="Boolean" default="false" />
+	<aura:attribute name="getval" type="SObject[]" />
+	<aura:attribute name="isOpen" type="boolean" default="false" />
+	<div class="wrapper" aura:id="wrap" onclick="{!c.selectedRecords}">
+
+		<aura:if isTrue="{!v.content}">
+			<aura:iteration items="{!v.duplicateCaseList}" var="item">
+				<ul class="list">
+					<p class='duplicate'> Duplicate Case</p>
+					<li>
+						<p>Case Number</p> <input value="{!item.CaseNumber}" /><button class="btn-marge"
+							onclick="{!c.mergeRecords }">Merge</button>
+					</li>
+					<li>
+						<p>Case Origin</p> <input value="{!item.Origin}" /><button class="btn-marge"
+							onclick="{! c.mergeRecords }">Merge</button>
+					</li>
+					<li>
+						<p>SuppliedEmail</p> <input value="{!item.SuppliedEmail}" /><button class="btn-marge"
+							onclick="{! c.mergeRecords }">Merge</button>
+					</li>
+					<li>
+						<p>Status</p> <input value="{!item.Status}" /><button class="btn-marge"
+							onclick="{! c.mergeRecords }">Merge</button>
+					</li>
+					<li>
+						<p>Reason</p> <input value="{!item.Reason}" /><button class="btn-marge"
+							onclick="{! c.mergeRecords }">Merge</button>
+					</li>
+					<li>
+						<p>Owner</p> <input value="{!item.OwnerId}" /><button class="btn-marge"
+							onclick="{! c.mergeRecords }">Merge</button>
+					</li>
+				</ul>
+			</aura:iteration>
+			<aura:set attribute="else">
+				<p class='noDuplicate'>No Duplicate Case</p>
+			</aura:set>
+		</aura:if>
+	</div>
+
+	<div class="slds-m-around_xx-large">
+		<aura:if isTrue="{!v.isOpen}">
+			<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+				aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }" alternativeText="close"
+							variant="bare-inverse" class="slds-modal__close" />
+						<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">WARNING</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+						<p><b>
+								The case will be closed.Are you sure?
+							</b>
+						</p>
+					</div>
+					<footer class="slds-modal__footer">
+						<div class="wrap-checkBox">
+							<ui:inputCheckbox aura:id="checkbox" label="" change="{!c.onCheck}" />
+							<p>Notify the employee about the closure</p>
+						</div>
+						<lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+						<lightning:button variant="brand" label="Continue" title="Continue" aura:id="continue"
+							onclick="{! c.closeModel }" />
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</aura:if>
+	</div>
+	
+</aura:component>

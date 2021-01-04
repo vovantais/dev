@@ -1,0 +1,85 @@
+.THIS.wrapper {
+   display: grid;
+	grid-template-columns: repeat(2,1fr);
+   grid-column-gap: 5px;
+   margin-top: 12px;
+}
+
+.THIS .list {
+   display: flex;
+	flex-direction: column;
+   background: #fff;
+   border-radius: 10px;
+   border-color: gray;
+   padding:10px;
+   margin-bottom: 10px;
+}
+
+.THIS .list li {
+   text-decoration: none;
+	letter-spacing: 1.2px;
+	color: rgb(56, 52, 47);
+   margin: 5px 0 10px 20px;
+}
+
+.THIS .list p {
+   font-weight: bold;
+   margin: 5px 0px;
+   color: var(--lwc-colorTextLinkDisabled,rgb(22, 50, 92));
+}
+
+.THIS .list input {
+   border:none;
+   border-bottom: 1px solid #AFAFAF;
+   outline: none;
+   cursor: pointer;
+}
+
+.THIS .list input:focus{
+   box-shadow: 0px 5px 10px rgba(22, 50, 92,0.5);         
+} 
+
+.THIS .list button {
+   display: flex;
+   justify-content: center;
+   margin: -25px 0 0 180px;
+   width: 80px;
+	height: 25px;
+	letter-spacing: 0.8px;
+   text-align: center;
+   cursor: pointer;
+   transition: all 0.5s linear 0.1s;
+   box-shadow: var(--sds-c-button-shadow);
+   border-radius: var(--sds-c-button-radius-border, var(--lwc-buttonBorderRadius,.25rem));
+   color: var(--sds-c-button-brand-text-color, var(--lwc-colorTextBrandPrimary,rgb(255, 255, 255)));
+   border-color: var(--sds-c-button-brand-color-border, var(--lwc-brandAccessible,rgb(0, 112, 210)));
+   background-color: var(--sds-c-button-brand-color-background, var(--lwc-brandAccessible,rgb(0, 112, 210)));
+}
+
+.THIS .list button:hover{
+	background-color: rgb(0, 61, 192);                                    
+}
+.THIS .noDuplicate{
+   border-radius: var(--sds-c-button-radius-border, var(--lwc-buttonBorderRadius,.25rem));
+   background: #fff;                                              
+   width: 400px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+   font-size: 28px;
+}
+
+.THIS .duplicate{
+   text-align: center;
+   font-size: 20px;
+   text-transform: uppercase;
+   letter-spacing: 0.8px; 
+}
+                                                
+.THIS .wrap-checkBox{
+   display: flex;                                                
+}
+
+.THIS .wrap-checkBox p {
+   margin-left: 10px;                                                
+}

@@ -1,0 +1,23 @@
+.THIS .carousel {
+   margin: 0 0 -500px 0px; 
+}
+
+.THIS .slds-carousel__content{
+   width: 0;
+   height: 0;
+   opacity: 0; 
+}
+
+.THIS .slds-text-link_reset{
+	border: none;
+	outline: none !important;
+   height: 613px;
+}
+
+.THIS .slds-button_icon-x-small {
+   display: none; 
+}
+
+.THIS .slds-button--icon-x-small{
+   display: none; 
+}
